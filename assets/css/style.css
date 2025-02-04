@@ -1573,6 +1573,7 @@ ul.check-marks li:before {
 .detail .description h4 {
   margin-top: 0;
   line-height: 21px;
+  font-weight: 600;
 }
 .detail .description p {
   margin-bottom: 40px;
@@ -1912,6 +1913,7 @@ hr {
 }
 .logos .logo {
   padding-left: 20px;
+  padding-right: 57px;
 }
 .logos .logo a {
   display: inline-block;
@@ -1941,7 +1943,10 @@ hr {
 }
 .logos .owl-stage .owl-item {
   height: 100%;
-  display: table;
+  /* display: table; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .logos .owl-stage .owl-item .logo {
   display: table-cell;
@@ -3373,7 +3378,7 @@ form .status i {
   }
 
   .owl-nav-wrapper #big-gallery-nav {
-    top: -55px;
+    top: 5px;
   }
 
   .detail {
@@ -3444,9 +3449,9 @@ form .status i {
     padding: 10px 8px;
   }
 
-  .logos .owl-stage .owl-item .logo, .logos .owl-stage .owl-item {
+  /* .logos .owl-stage .owl-item .logo, .logos .owl-stage .owl-item {
     display: inline-block;
-  }
+  } */
 
   .logos .logo {
     padding-left: 0px;

@@ -287,6 +287,9 @@ function initializeOwl(){
             var items = parseInt( $(this).attr("data-owl-items"), 10);
             if( !items ) items = 1;
 
+            var itemsMobile = parseInt( $(this).attr("data-owl-items-mobile"), 10);
+            if( !itemsMobile ) itemsMobile = 1;
+
             var nav = parseInt( $(this).attr("data-owl-nav"), 2);
             if( !nav ) nav = 0;
 
@@ -332,7 +335,7 @@ function initializeOwl(){
                 navText: [],
                 responsive: {
                     0 : {
-                        items: 1,
+                        items: itemsMobile,
                         autoWidth: false,
                         center: false
                     },
