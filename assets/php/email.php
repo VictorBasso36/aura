@@ -2,7 +2,7 @@
 mb_internal_encoding("UTF-8");
 
 $to = 'frankrsouza@gmail.com';
-$subject = 'Formulário LP Evidências';
+$subject = 'Formulário LP Aura';
 
 $body = "";
 $name = "";
