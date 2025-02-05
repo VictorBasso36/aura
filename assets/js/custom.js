@@ -136,28 +136,43 @@ $(document).ready(function($) {
 
 //  Form Validation
 
-    $("form .btn[type='submit']").on("click", function(){
-        var button = $(this);
-        var form = $(this).closest("form");
-        button.prepend("<div class='status'></div>");
-        form.validate({
-            messages: {
-                name: "O campo Nome é obrigatório.",
-                email: "O campo E-mail é obrigatório.",
-                message: "O campo Mensagem é obrigatório"
-                
-            },
-            submitHandler: function() {
-                $.post("assets/php/email.php", form.serialize(),  function(response) {
-                    //console.log(response);
-                    //$('#form-subscribe .form-contact-status').html(response);
-                    button.find(".status").append(response);
-                    form.addClass("submitted");
-                });
-                return false;
-            }
-        });
+$("form .btn[type='submit']").on("click", function(){
+    var form = $(this).closest("form");
+    var nameField = $('#form-contact-name');
+    var emailField = $('#form-contact-email');
+    var textField = $('#form-contact-message');
+
+    var status = $('.status');
+    var loading = $('.loading');
+    var button = $(this);
+
+    form.validate({
+        messages: {
+            name: "O campo Nome é obrigatório.",
+            email: "O campo E-mail é obrigatório.",
+            message: "O campo Mensagem é obrigatório"
+        },
+        submitHandler: function() {
+            button.hide();
+            loading.show();
+            status.html('');
+
+            $.post("./assets/php/email.php", form.serialize(),  function(response) {
+                status.append(response);
+                //form.addClass("submitted");
+
+                nameField.val('');
+                emailField.val('');
+                textField.val('');
+
+                loading.hide();
+                button.show();
+            });
+
+            return false;
+        }
     });
+});
 
     $("[data-background-color-custom]").each(function() {
         $(this).css( "background-color", $(this).attr("data-background-color-custom") );
