@@ -1617,7 +1617,7 @@ ul.check-marks li:before {
   position: relative;
   margin-bottom: 30px;
 }
-.feature h3 {
+.feature h2 {
   font-size: 20px;
   margin-bottom: 20px;
 }
@@ -3175,7 +3175,7 @@ form .status i {
     padding: 60px 0;
   }
 
-  .feature h3 {
+  .feature h2 {
     font-size: 16px;
   }
 
@@ -3286,7 +3286,7 @@ form .status i {
     padding-left: 70px;
   }
 
-  .feature h3 {
+  .feature h2 {
     font-size: 14px;
   }
 
