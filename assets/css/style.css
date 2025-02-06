@@ -1781,7 +1781,10 @@ hr {
 .gallery .gallery-item img {
   max-width: 100%;
 }
-
+.owl-carousel .owl-item img {
+  max-width: 100%;
+  object-fit: cover;
+}
 .hover-effect:hover span .hover-element {
   -moz-transform: translateY(100%);
   -ms-transform: translateY(100%);
@@ -2805,6 +2808,9 @@ hr {
   display: inline-block;
   position: relative;
   margin-bottom: 10px;
+}
+.video-player img {
+  object-fit: cover;
 }
 .video-player:hover .has-overlay:after {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
