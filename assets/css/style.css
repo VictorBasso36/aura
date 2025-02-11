@@ -1966,7 +1966,7 @@ hr {
   margin: 0 30px;
 }
 .logos .owl-stage {
-  height: 100%;
+  height: auto;
 }
 .logos .owl-stage .owl-item {
   height: 100%;
@@ -1976,10 +1976,18 @@ hr {
   justify-content: center;
 }
 .logos .owl-stage .owl-item .logo {
-  display: table-cell;
-  vertical-align: middle;
+  /* display: table-cell;
+  vertical-align: middle; */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
-
+.logos .owl-stage .owl-item .logo .text {
+  width: 100%;
+  max-width: 170px;
+  text-align: center;
+  font-size: 14px;
+}
 .marketing-banner h2 {
   margin: 15px 0;
 }
