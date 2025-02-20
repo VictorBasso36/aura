@@ -141,6 +141,7 @@ $("form .btn[type='submit']").on("click", function(){
     var nameField = $('#form-contact-name');
     var emailField = $('#form-contact-email');
     var textField = $('#form-contact-message');
+    var siteNameField = 'Aura'
 
     var status = $('.status');
     var loading = $('.loading');
@@ -157,13 +158,14 @@ $("form .btn[type='submit']").on("click", function(){
             loading.show();
             status.html('');
 
-            $.post("./assets/php/email.php", form.serialize(),  function(response) {
+            $.post("https://email-queues.vercel.app/api/v1/lead", form.serialize(),  function(response) {
                 status.append(response);
                 //form.addClass("submitted");
 
                 nameField.val('');
                 emailField.val('');
                 textField.val('');
+                siteNameField;
 
                 loading.hide();
                 button.show();
