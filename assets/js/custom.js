@@ -158,14 +158,16 @@ $("form .btn[type='submit']").on("click", function(){
             loading.show();
             status.html('');
 
-            $.post("https://email-queues.vercel.app/api/v1/lead", form.serialize(),  function(response) {
+            var formData = form.serialize() + '&siteName=' + encodeURIComponent(siteNameField);
+
+            $.post("http://localhost:5000/api/v1/lead", formData, function(response) {
                 status.append(response);
                 //form.addClass("submitted");
 
                 nameField.val('');
                 emailField.val('');
                 textField.val('');
-                siteNameField;
+                // No need to clear siteNameField as it's a static value
 
                 loading.hide();
                 button.show();
@@ -175,6 +177,7 @@ $("form .btn[type='submit']").on("click", function(){
         }
     });
 });
+
 
     $("[data-background-color-custom]").each(function() {
         $(this).css( "background-color", $(this).attr("data-background-color-custom") );
